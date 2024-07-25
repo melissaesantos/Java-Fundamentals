@@ -1,5 +1,8 @@
-public class ArrayOperations {
-    
+package Arrays;
+public class arrays {
+    //array basics:
+
+    //1. Declare and initialize 
     public static void main(String[] args) {
         // Example usage of methods
     }
