@@ -39,12 +39,24 @@ public class arrays {
     }
 
     public static double calculateAverage(int[] array) {
-        // Implementation
-        return 0;
+        double average = 0.0;
+        double total = 0;
+        for( int i =0; i < array.length; i++){
+            total += array[i];
+        }
+        average = total/ array.length;
+        return average;
     }
-
+ 
     public static void reverseArray(int[] array) {
-        // Implementation
+        // we need to reverse the array
+        int len = array.length;
+        for( int i =0; i < len/2;i++){
+            int temp = array[i];
+            array[i] = array[len-i-1];
+            array[len-i-1] = temp;
+        }
+        
        
     }
 
