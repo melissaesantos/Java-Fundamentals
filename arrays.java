@@ -8,14 +8,27 @@ public class arrays {
 
     //1. Declare and initialize 
     public static void main(String[] args) {
-        // Example usage of methods
-        int[] testArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int max = findMax(testArray);
-        System.out.println("The maximum value in the array is: " + max);
-        //******TESTING FIND MIN */
-        int[] testArray1 = {10,3,4,1,2};
-        int min = findMin(testArray1);
-        System.out.println("The minimum value in the array is: " + min);
+        // // Example usage of methods
+        // int[] testArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        // int max = findMax(testArray);
+        // System.out.println("The maximum value in the array is: " + max);
+        // //******TESTING FIND MIN */
+        // int[] testArray1 = {10,3,4,1,2};
+        // int min = findMin(testArray1);
+        // System.out.println("The minimum value in the array is: " + min);
+
+        int[] testArray = {5, 3, 8, 1, 9, 2, 7, 4, 6, 10};
+        System.out.println("Original array:");
+        for(int i =0; i < testArray.length; i++){
+            System.out.println(testArray[i]);
+        }
+        
+
+        sortArrayAscending(testArray);
+        System.out.println("Sorted array in ascending order:");
+        for(int i =0; i < testArray.length; i++){
+            System.out.println(testArray[i]);
+        }
     }
     
     public static int findMax(int[] array) {
@@ -61,8 +74,20 @@ public class arrays {
     }
 
     public static void sortArrayAscending(int[] array) {
-        // Implementation
+        // Implementation so it goes smaller to bigger
+        //the first for loop focuses on the first number and then the second loop iterates through all of the numbers after it until 
+        //num1 has been compared to every other number in thearray 
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
     }
+    
 
     public static void sortArrayDescending(int[] array) {
         // Implementation
