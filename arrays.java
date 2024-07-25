@@ -1,26 +1,42 @@
 
 public class arrays {
     //array basics:
+    //javac arrays.java
+    //java arrays.java
+
+
 
     //1. Declare and initialize 
     public static void main(String[] args) {
         // Example usage of methods
+        int[] testArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int max = findMax(testArray);
+        System.out.println("The maximum value in the array is: " + max);
     }
     
     public static int findMax(int[] array) {
-        // Implementation
+        int max = 0;
+        for(int i =0; i < array.length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
     }
 
     public static int findMin(int[] array) {
         // Implementation
+        return 0;
     }
 
     public static double calculateAverage(int[] array) {
         // Implementation
+        return 0;
     }
 
     public static void reverseArray(int[] array) {
         // Implementation
+       
     }
 
     public static void sortArrayAscending(int[] array) {
@@ -32,11 +48,11 @@ public class arrays {
     }
 
     public static int[] mergeArrays(int[] array1, int[] array2) {
-        // Implementation
+        return array1;
     }
 
     public static int[] removeDuplicates(int[] array) {
-        // Implementation
+        return array;
     }
 
     public static void rotateArrayLeft(int[] array, int positions) {
@@ -52,6 +68,6 @@ public class arrays {
     }
 
     public static int[][] transposeMatrix(int[][] array) {
-        // Implementation
+        return array;
     }
 }
