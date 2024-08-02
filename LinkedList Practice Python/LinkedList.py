@@ -23,7 +23,7 @@ class LinkedList:
         prev = None
 
         while curr != None:
-            if(curr.songName == songName):
+            if(curr.song_name == songName):
                 #now we want to delete this node
                 #need to change the next of the previous node
                 #we also need to the new node \.next = curr.next 
@@ -42,4 +42,14 @@ class LinkedList:
         return f"Song '{songName}' not found."    
 
 
+    def find_song(self,song_name):
+        curr = self.head
+        position = 1
 
+        while curr != None:
+            if curr.song_name == songName:
+                return f"Found '{song_name}' at position {position}."
+            curr = curr.next
+            position += 1
+
+        return f"Song '{song_name}' not found."
