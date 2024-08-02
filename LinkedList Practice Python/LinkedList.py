@@ -18,3 +18,28 @@ class LinkedList:
             #setting the tail to be the new node
             self.tail = newNode
 
+    def remove_song(self, songName):
+        curr = self.head
+        prev = None
+
+        while curr != None:
+            if(curr.songName == songName):
+                #now we want to delete this node
+                #need to change the next of the previous node
+                #we also need to the new node \.next = curr.next 
+                if prev!= self.head: #checking if previous is the first node
+                    prev.next = curr.next
+                #the case in which previous is the first node                      
+                else:
+                    self.head = curr.next
+                #what if it is the tail that we want to remove
+                if curr == self.tail:
+                    self.tail = prev
+
+                return f"Removed: {songName}"
+            prev = curr
+            curr = curr.next
+        return f"Song '{songName}' not found."    
+
+
+
