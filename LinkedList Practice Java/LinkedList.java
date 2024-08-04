@@ -60,4 +60,17 @@ public class LinkedList {
         }
         return "Song '" + songName + "' not found.";
     }
+
+    public void displayPlaylist(){
+        if(head == null){
+            System.out.println("The Playlist is empty.");
+            return;
+        }
+
+        Node curr = head;
+        while(curr!=null){
+            System.out.println(curr);
+            curr = curr.next;
+        }
+    }
 }
