@@ -73,4 +73,12 @@ public class LinkedList {
             curr = curr.next;
         }
     }
+
+    public void playNextSong(){
+        if(head == null){
+            System.out.println("The playlist is empty");
+        }
+        System.out.println("Playing next song: " + head);
+        head = head.next;
+    }
 }
