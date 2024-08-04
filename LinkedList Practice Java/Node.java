@@ -4,6 +4,7 @@ public class Node {
     String songName;
     String artistName;
     Node next;
+    Node previous;
     //node has a memory address for where it is located in the computer
     //a singly linked list has a head ->Node(value).next-> Node2(value).bext->
     //accessing or looking for a node is O(n)
@@ -13,6 +14,7 @@ public class Node {
         this.songName = songName;
         this.artistName= artistName;
         this.next = null; //intially the next is null 
+        this.previous = null;
    }
 
    @Override

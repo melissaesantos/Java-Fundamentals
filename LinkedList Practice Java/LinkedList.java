@@ -1,3 +1,5 @@
+
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -16,6 +18,7 @@ public class LinkedList {
             tail = newNode;
         }else{
             //this is not the first song so we are adding it to the end
+            newNode.previous = tail;
             tail = newNode;
             tail.next = newNode;
         }
@@ -29,19 +32,21 @@ public class LinkedList {
 
         while(curr!= null){
             if(curr.songName.equals(songName)){
-                //now we need to check if its the first one in the list or not
-                if(prev != null){
-                    prev.next = curr.next;
-                }else{
-                    head = curr.next;
+               if(curr == head){
+                head = curr.next;
+                if(head!=null){
+                    head.previous =null;
                 }
-                //here we are checking if it is the last song we want to remove
-                if (curr == tail){
-                    tail = prev;
-                }
-                return "Removed" + songName;
+               }else if(curr == tail){
+                tail = curr.previous;
+                tail.next = null;
+               }else{//here we are removing from the middle of the list
+                curr.previous.next = curr.next;
+                curr.next.previous = curr.previous;
+
+               }
             }
-            prev = curr;
+          // prev = curr;
             curr = curr.next;
         }
         return "Song '" + songName + "' not found.";
@@ -78,7 +83,27 @@ public class LinkedList {
         if(head == null){
             System.out.println("The playlist is empty");
         }
-        System.out.println("Playing next song: " + head);
+        System.out.println("Playing: " + head);
         head = head.next;
+        if(head != null){
+            head.previous = null;
+        }else{
+            tail = null;      //if head is null then the list is empty   
+        }
+    }
+// now we are going to implement the doubly linked list 
+    public void playPrevious(){
+        if(tail == null){
+            System.out.println("No pervious song to play");
+            return;
+        }
+        System.out.println("Playing: " + tail);
+        tail = tail.previous;
+        if(tail!= null){
+            tail.next = null; //uodating the tails next to be null
+        }else{
+            head = null;
+        }
+
     }
 }
