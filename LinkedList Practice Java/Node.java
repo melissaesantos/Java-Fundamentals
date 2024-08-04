@@ -1,6 +1,5 @@
 
 
-
 public class Node {
     String songName;
     String artistName;
@@ -10,7 +9,7 @@ public class Node {
     //accessing or looking for a node is O(n)
     //adding or subrtracting a node is O(1)
     //DOublly linked list also has a prev 
-   public Node(String songName, String artistName, Node next){
+   public Node(String songName, String artistName){
         this.songName = songName;
         this.artistName= artistName;
         this.next = null; //intially the next is null 
