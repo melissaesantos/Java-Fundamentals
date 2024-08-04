@@ -23,7 +23,7 @@ public class LinkedList {
         
     }
 
-    public String removeSong(String songName, String artistName){
+    public String removeSong(String songName){
         Node curr = head;
         Node prev = null;
 

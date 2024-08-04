@@ -17,6 +17,6 @@ public class Node {
 
    @Override
    public String toString(){
-    return songName + "by" + artistName;
+    return songName + " by " + artistName;
    }
 }
