@@ -2,5 +2,11 @@ public class LinkedList {
     private Node head;
     private Node tail;
     
-    // Constructor and methods...
+
+    public LinkedList(){
+        this.head = null;
+        this.tail = null;
+    }
+
+    public
 }
