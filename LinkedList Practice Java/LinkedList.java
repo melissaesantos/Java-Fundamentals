@@ -46,4 +46,18 @@ public class LinkedList {
         }
         return "Song '" + songName + "' not found.";
     }
+
+
+    public String findSong(String songName){
+        Node curr = head;
+        int pos = 1;
+        while(curr!=null){
+            if(curr.songName.equals(songName)){
+                return "Found '" + songName + "' at position " + pos + ".";
+            }
+            curr = curr.next;
+            pos++;
+        }
+        return "Song '" + songName + "' not found.";
+    }
 }
